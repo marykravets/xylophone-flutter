@@ -1,7 +1,7 @@
-import 'package:audioplayers/audio_cache.dart';
+import 'PlayerAudioCache.dart';
 
 class Player {
-  static final player = new AudioCache();
+  static final player = new PlayerAudioCache();
   static final int _keysCount = 7;
 
   static final List<String> _fileNames = getFileNames();
