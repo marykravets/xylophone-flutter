@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'player.dart';
+import 'Player.dart';
 
 class PlayerUI {
   // static keys are faster
@@ -18,7 +18,7 @@ class PlayerUI {
           color: color));
 
   static List<Widget> _getKeys() {
-    final list = new List<Widget>();
+    final list = <Widget>[];
 
     for (int i = 1; i <= Player.getKeyCount(); i++) {
       list.add(_getNoteBtn(Player.getNoteSound(i), _colors[i]));

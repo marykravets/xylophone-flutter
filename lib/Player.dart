@@ -14,7 +14,7 @@ class Player {
   }
 
   static List<String> getFileNames() {
-    final List<String> fileNames = new List();
+    final List<String> fileNames = <String>[];
 
     for (int i = 1; i <= _keysCount; i++) {
       fileNames.add("note$i.wav");

@@ -4,8 +4,14 @@ import 'Player.dart';
 
 void main() => runApp(XylophoneApp());
 
-class XylophoneApp extends StatelessWidget {
+class XylophoneApp extends StatefulWidget {
   static final Color mainBackground = Colors.black;
+
+  @override
+  _XylophoneAppState createState() => _XylophoneAppState();
+}
+
+class _XylophoneAppState extends State<XylophoneApp> {
   double _y = 0;
   double _offset = 10;
 
@@ -16,7 +22,7 @@ class XylophoneApp extends StatelessWidget {
 
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: mainBackground,
+        backgroundColor: XylophoneApp.mainBackground,
         body: GestureDetector(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
