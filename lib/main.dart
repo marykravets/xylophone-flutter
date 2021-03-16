@@ -12,8 +12,6 @@ class XylophoneApp extends StatefulWidget {
 }
 
 class _XylophoneAppState extends State<XylophoneApp> {
-  double _y = 0;
-  double _offset = 10;
 
   @override
   Widget build(BuildContext context) {
@@ -23,28 +21,11 @@ class _XylophoneAppState extends State<XylophoneApp> {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: XylophoneApp.mainBackground,
-        body: GestureDetector(
-            child: Column(
+        body: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: PlayerUI.getKeys(),
             ),
-            onVerticalDragStart: (e) {
-              _y = e.globalPosition.dy;
-            },
-            onVerticalDragUpdate: (e) {
-              _onVerticalDrag(e);
-            }),
       ),
     );
-  }
-
-  void _onVerticalDrag(DragUpdateDetails e) {
-    if (e.globalPosition.dx - _offset > _offset) {
-      if (e.globalPosition.dy - _offset > _y) {
-        Player.playAllForward();
-      } else if (e.globalPosition.dy + _offset < _y) {
-        Player.playAllBackward();
-      }
-    }
   }
 }

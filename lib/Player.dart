@@ -37,22 +37,4 @@ class Player {
       player.play(sound);
     }
   }
-
-  static Future<void> playAllForward() async {
-    for (int i = 1; i <= _keysCount; i++) {
-      _play(i);
-    }
-  }
-
-  static Future<void> playAllBackward() async {
-    for (int i = _keysCount; i > 1; i--) {
-      _play(i);
-    }
-  }
-
-  static Future<void> _play(int i) async {
-    if (i > 0) {
-      player.play(getNoteSound(i));
-    }
-  }
 }

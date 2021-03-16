@@ -19,7 +19,10 @@ class PlayerUI {
           child: GestureDetector (
             onHorizontalDragUpdate: (e) {
               Player.play(sound);
-            }
+            },
+            onLongPress: () {
+              Player.play(sound);
+            },
           )
       )
   );
