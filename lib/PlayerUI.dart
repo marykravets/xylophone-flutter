@@ -15,7 +15,14 @@ class PlayerUI {
           onPressed: () {
             Player.play(sound);
           },
-          color: color));
+          color: color,
+          child: GestureDetector (
+            onHorizontalDragUpdate: (e) {
+              Player.play(sound);
+            }
+          )
+      )
+  );
 
   static List<Widget> _getKeys() {
     final list = <Widget>[];
