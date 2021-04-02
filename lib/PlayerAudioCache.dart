@@ -6,11 +6,11 @@ class PlayerAudioCache extends AudioCache {
   Future<AudioPlayer> play(
       String fileName, {
         double volume = 1.0,
-        bool isNotification,
+        bool? isNotification,
         PlayerMode mode = PlayerMode.LOW_LATENCY,
         bool stayAwake = false,
         bool recordingActive = false,
-        bool duckAudio,
+        bool? duckAudio,
       }) async {
     final String url = await getAbsoluteUrl(fileName);
     final AudioPlayer player = new AudioPlayer(mode: mode);
