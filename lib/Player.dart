@@ -32,7 +32,7 @@ class Player {
     return "";
   }
 
-  static Future<void> play(String sound) async {
+  static void play(String sound) {
     if (sound.isNotEmpty) {
       player.play(sound);
     }
